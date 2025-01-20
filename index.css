@@ -1,0 +1,255 @@
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    height: 100vh;
+    background-color: black;
+    color: white; 
+}
+
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(27, 25, 25);
+    height: 10vh;
+    z-index: 10000;
+}
+
+.menu
+{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    transform: translateY(3vh);
+}
+
+.menu li 
+{
+    width: 20%; 
+}
+
+.menu li a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    transition: 0.3s ease-in;
+ 
+}
+
+.menu li a:hover 
+{ 
+    color: blue;
+    transform: translateY(3px);    
+}
+
+main
+{
+    margin-top: 12vh;
+}
+
+.about-me
+{
+    display: flex; 
+    
+}
+
+.mydetails,.photo
+{
+  flex-basis: 50%;
+}
+
+.mydetails
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    animation: left 2s;
+}
+
+.full-name
+{
+    font-size: 4rem;
+
+}
+
+.profession
+{
+    font-size: 2rem;
+}
+
+.photo
+{
+    animation: top 2s;
+    flex-shrink: 0;
+}
+.image
+{
+    height: 70vh;
+    width: 90%; 
+    text-align: center;
+}
+
+.image img
+{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    border-radius: 50%;
+    border: 5px solid white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.image img:hover
+{
+    border-color:blue;
+    transform: scale(0.97);
+}
+
+@keyframes left
+{
+    
+
+    from   
+    {
+        transform: translateX(-500px);
+        opacity: 0.5;
+    }
+    to
+    {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes top
+{
+    
+
+    from   
+    {
+        transform: translateY(-500px); 
+        opacity: 0.5;
+    }
+    to
+    {
+        transform: translateY(0); 
+        opacity: 1;
+    }
+}
+
+@keyframes skills
+{
+    from
+    {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to
+    {
+        opacity: 1;
+        transform: scale(1);
+    }
+} 
+
+.skills
+{
+    text-align: center; 
+    animation: skills 2s ease-in;
+    margin-top: 13vh;
+}
+.skill
+{
+    padding: 5vh 5vw 3vh 0;
+}
+.skill p
+{
+    font-size: 2rem;
+}
+
+
+/*responsive design*/
+
+ 
+@media screen and (max-width:768px)
+{
+    .full-name
+    {
+        font-size: 3rem;
+
+    }
+
+    .profession
+    {
+        font-size: 1.5rem;
+    }
+
+    .mydetails
+    {
+        text-align: center;
+    }
+
+    .image img
+    {
+        height: 80%;
+        width: 110%;
+    }
+    
+}
+
+@media screen and (max-width:540px)
+{
+
+    .about-me
+    {
+        flex-direction: column; 
+       
+    }
+     .image
+     {
+        text-align: center;
+     }
+
+    .image img
+    {
+        height: 90%;
+        width: 90%;
+    }
+    .mydetails
+    {
+        margin-bottom: 4vh;
+        margin-top: 20vh;
+    }
+
+    .menu
+    {
+        flex-direction: column;
+        text-align: left;
+        width: 100%;
+    }
+
+    .menu li 
+    {
+        margin-bottom: 1vh;
+        padding-left: 4vw;
+        width: 100%;
+    }
+
+    header
+    {
+        height: 30vh;
+    }
+}
